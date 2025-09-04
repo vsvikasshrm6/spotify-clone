@@ -1,8 +1,7 @@
 import { Router } from "express";
-
+import { callback } from "../controller/auth.controller";
 const router = Router();
 
-router.get("/", (req, res)=>{
-    res.status(200).json({message : "Hello"});
-})
+router.get("/callback", callback);
+
 export default router;
