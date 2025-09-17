@@ -3,8 +3,6 @@ import {  requireAuth } from '@clerk/express'
 
 const router = Router();
 
-router.get("/", requireAuth(),  (req, res)=>{
-    res.status(200).json({message : "Hello"});
-})
+router.post("/song", requireAuth(),  createSong)
 
 export default router;
