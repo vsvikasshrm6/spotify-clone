@@ -12,6 +12,8 @@ import fileUpload from "express-fileupload";
 import  path  from 'path';
 dotenv.config();
 
+const __dirname = path.resolve();
+
 
 
 const PORT = process.env.PORT;
@@ -21,7 +23,8 @@ app.use(
   fileUpload({
     limits: { fileSize: 10 * 1024 * 1024 },
     useTempFiles: true,
-    tempFileDir: "/tmp/",
+    createParentPath : true,
+    tempFileDir: path.join(__dirname, "tmp")
   })
 );
 app.use(express.json());
