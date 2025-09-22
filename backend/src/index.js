@@ -9,7 +9,10 @@ import { connectDB } from "./utils/db.js";
 import { clerkMiddleware } from "@clerk/express";
 import fileUpload from "express-fileupload";
 
+import  path  from 'path';
 dotenv.config();
+
+
 
 const PORT = process.env.PORT;
 const app = express();
