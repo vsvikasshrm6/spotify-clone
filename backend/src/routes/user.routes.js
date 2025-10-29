@@ -1,8 +1,6 @@
 import { Router } from "express";
-
+import {  requireAuth } from '@clerk/express'
 const router = Router();
 
-router.get("/", (req, res)=>{
-    res.status(200).json({message : "Hello"});
-})
+router.get("/", requireAuth(), getAllUser)
 export default router;

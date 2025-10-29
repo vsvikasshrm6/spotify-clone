@@ -5,6 +5,7 @@ import albumRoutes from "./routes/album.routes.js";
 import authRoutes from "./routes/auth.routes.js";
 import adminRoutes from "./routes/admin.routes.js";
 import userRoutes from "./routes/user.routes.js";
+import statsRoutes from "./routes/stats.routes.js";
 import { connectDB } from "./utils/db.js";
 import { clerkMiddleware } from "@clerk/express";
 import fileUpload from "express-fileupload";
@@ -36,6 +37,7 @@ app.use("/api/album", albumRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/user", userRoutes);
+app.use("/api/stats", statsRoutes)
 
 app.listen(PORT, () => {
   connectDB();
